@@ -1,13 +1,13 @@
 <div class="main">
   <header>
     <h1>Учет затрат по обслуживанию автомобиля</h1>
-    <app-input [place]="'Марка автомобиля'" class="model"></app-input>
+    <app-input [place]="'Марка автомобиля'" class="main__model" [toggle]="false"></app-input>
     <button (click)="onAdd($event)" class="btn">Сохранить</button>
-    <div class="show">{{car}}</div>
+    <div class="main__show">{{car}}</div>
   </header>
   <div>
-    <app-input [text]="text" class="text" [place]="'Наименование затрат'"></app-input> <br>
-    <app-input [text]="price" class="price" [place]="'Цена'"></app-input> <br>
+    <app-input [text]="text" class="text" [place]="'Наименование затрат'" [toggle]="false"></app-input> <br>
+    <app-input [text]="price" class="price" [place]="'Цена'" [toggle]="false"></app-input> <br>
     <button class="btn" (click)="addPoint($event)">Добавить</button>
   </div>
   <div class="main__point">
@@ -22,7 +22,4 @@
     <h3>Итоговая сумма затрат: {{all}}</h3>
     <button class="btn" (click)="onSave($event)">Сохранить</button>
   </div>
-  <footer>
-    <h3>Предложения по изменению приложения</h3>
-  </footer>
 </div>

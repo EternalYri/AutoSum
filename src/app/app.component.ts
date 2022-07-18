@@ -12,16 +12,22 @@ export class AppComponent implements OnInit {
   date: any;
   arrEnd: any = [];
   arrCard: any = [];
-  all = 0
+  all: any = 0
 
-  title: any = document.getElementsByClassName('model');
+  title: any = document.getElementsByClassName('main__model');
   carPrice: any = document.getElementsByClassName('price');
   carText: any = document.getElementsByClassName('text');
   car = '';
 
   onAdd(event: any) {
-    this.car = this.title[0].firstChild.value;
-    this.title[0].firstChild.value = '';
+    if(this.title[0].firstChild.value == '') {
+      console.log(this.title[0].firstChild.style.border = '2px solid red')
+    } else {
+      this.car = this.title[0].firstChild.value;
+      this.title[0].firstChild.value = '';
+      this.title[0].firstChild.style.border = ''
+    }
+
   }
   addPoint(event: any) {
     let arr = [];
@@ -33,7 +39,14 @@ export class AppComponent implements OnInit {
     this.carText[0].firstChild.value = '';
     this.carPrice[0].firstChild.value = '';
     this.all = 0;
-    this.arrEnd.forEach((data:any)=>{this.all +=+data[1]})
+    this.arrEnd.forEach((data:any)=>{
+      if(isNaN(data[1])) {
+        this.all = "Невозможно посчитать сумму";
+      } else {
+        this.all +=+data[1]
+
+      }
+    })
   }
   remove(id: number) {
     this.arrEnd.splice(id, 1);
