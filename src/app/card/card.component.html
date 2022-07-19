@@ -1,10 +1,10 @@
 <div class="main">
   <header>
-    <h1>Учет затрат</h1>
+    <h1>Учет затрат:</h1>
     <app-input [place]="'Наименование списка'" class="main__model" [toggle]="false"></app-input>
-    <app-button (click)="onAdd($event)" [name]="'Добавить'"></app-button>
-    <div class="main__show">{{car}}</div>
+    <app-button (click)="onAdd($event)" [name]="'Добавить'" class="addName"></app-button>
   </header>
+  <div class="main__show">{{car}}</div>
   <div>
     <app-input [text]="text" class="text" [place]="'Наименование затрат'" [toggle]="false"></app-input>
     <app-input [text]="price" class="price" [place]="'Цена'" [toggle]="false"></app-input>

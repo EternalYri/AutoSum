@@ -5,6 +5,17 @@
   justify-content: space-around;
   color: white;
   font-family: 'Roboto';
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    app-input{
+      padding-top: 18px;
+    }
+    app-button{
+      padding-top: 18px;
+    }
+  }
   .text{
     margin-right: 15px ;
   }

@@ -20,14 +20,8 @@ export class CardComponent implements OnInit {
   car = '';
 
   onAdd(event: any) {
-    if(this.title[0].firstChild.value == '') {
-      console.log(this.title[0].firstChild.style.border = '2px solid red')
-    } else {
       this.car = this.title[0].firstChild.value;
-      this.title[0].firstChild.value = '';
-      this.title[0].firstChild.style.border = ''
-    }
-
+    console.log(document.getElementsByClassName('addName')[0])
   }
   addPoint(event: any) {
     let arr = [];
