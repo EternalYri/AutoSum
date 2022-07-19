@@ -1,5 +1,15 @@
-<div>
-  <h1>Погода</h1>
-  <app-input [place]="'Введите город'"></app-input>
-  <app-button [name]="'Добавить'"></app-button>
+<div class="wather">
+  <h1>Погода на пять дней</h1>
+  <app-input [place]="'Введите город'" class="city"></app-input>
+  <app-button [name]="'Добавить'" (click)="onAdd($event)" class="add"></app-button>
+  <h3 class="main__show">{{city}}</h3> <br>
+  <div *ngFor="let elem of obj" class="info">
+    <div class="card">
+      <img class="icon" src="http://openweathermap.org/img/wn/{{elem[1]}}.png" alt="Что-то пошло не так">
+      <p>{{elem[3] - 273}} c</p>
+      <p>{{elem[0] | slice: 0: -9}}</p>
+      <p>Ветер: {{elem[2]}} м/с</p>
+    </div>
+    <!-- <img src="http://openweathermap.org/img/wn/02d.png" alt=""> -->
+  </div>
 </div>
