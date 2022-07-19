@@ -1,0 +1,25 @@
+<div class="main">
+  <header>
+    <h1>Учет затрат</h1>
+    <app-input [place]="'Наименование списка'" class="main__model" [toggle]="false"></app-input>
+    <button (click)="onAdd($event)" class="btn">Сохранить</button>
+    <div class="main__show">{{car}}</div>
+  </header>
+  <div>
+    <app-input [text]="text" class="text" [place]="'Наименование затрат'" [toggle]="false"></app-input> <br>
+    <app-input [text]="price" class="price" [place]="'Цена'" [toggle]="false"></app-input> <br>
+    <button class="btn" (click)="addPoint($event)">Добавить</button>
+  </div>
+  <div class="main__point">
+    <div *ngFor="let elem of arrEnd; let i = index" class="card">
+      <p>{{i+1}}</p>
+      <h3>{{elem[0]}}</h3>
+      <h3>{{elem[1]}}</h3>
+      <p>{{elem[2]}}</p>
+      <div class="image" (click)="remove(i)">
+      </div>
+    </div>
+    <h3>Итоговая сумма затрат: {{all}}</h3>
+    <button class="btn" (click)="onSave($event)">Сохранить</button>
+  </div>
+</div>

@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
+import { WeatherComponent } from './weather/weather.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputComponent
+    InputComponent,
+    WeatherComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
