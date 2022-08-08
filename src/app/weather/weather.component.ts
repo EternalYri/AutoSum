@@ -12,27 +12,21 @@ export class WeatherComponent implements OnInit {
   city = ''
   icon: any;
   name: string = '';
-  // arrTemp = [];
-  // arrTime = [];
-  // arrWeathers = [];
-  // arrWind = [];
-  // arrIcon = [];
   obj = [];
-  // end = [];
 
   constructor(public http: AddweatherService) {}
 
   onAdd(event: any) {
     this.city = this.http.input[0].firstChild.value;
-    this.http.ngAdd(event)
+    this.http.ngAdd()
     .subscribe((data)=>{
       this.obj = [];
-      let arrIcon = [];
-      let end = [];
-      let arrTemp = [];
-      let arrTime = [];
-      let arrWeathers = [];
-      let arrWind = [];
+      const arrIcon = [];
+      const end = [];
+      const arrTemp = [];
+      const arrTime = [];
+      const arrWeathers = [];
+      const arrWind = [];
 
       for (var i=0; i<data.length; i+=8){
         arrTemp.push((data[i]['main']['temp']).toFixed(0))
