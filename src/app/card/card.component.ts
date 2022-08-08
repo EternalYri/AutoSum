@@ -21,7 +21,6 @@ export class CardComponent implements OnInit {
 
   onAdd(event: any) {
       this.car = this.title[0].firstChild.value;
-    console.log(document.getElementsByClassName('addName')[0])
   }
   addPoint(event: any) {
     let arr = [];
@@ -32,7 +31,7 @@ export class CardComponent implements OnInit {
     this.arrEnd.push(arr);
     this.carText[0].firstChild.value = '';
     this.carPrice[0].firstChild.value = '';
-    this.all = 0;
+    this.all  = 0;
     this.arrEnd.forEach((data:any)=>{
       if(isNaN(data[1])) {
         this.all = "Невозможно посчитать сумму";
@@ -68,7 +67,7 @@ export class CardComponent implements OnInit {
       this.all = JSON.parse(sum)
     } else {
       this.all = 0;
-      this.arrEnd = [];
+      this.arrEnd= [];
     }
   }
 
